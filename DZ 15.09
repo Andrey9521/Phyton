@@ -1,0 +1,31 @@
+class Appliance:
+    def __init__(self,brand):
+        self.brand = brand
+    def getInfo(self):
+        print(f"Brand - {self.brand},", end="")
+class KitchenAppliance(Appliance):
+    def __init__(self, brand, power):
+        super().__init__(brand)
+        self.power = power
+    def getInfo(self):
+        super().getInfo()
+        print(f" power - {self.power},", end="")
+class Oven(KitchenAppliance):
+    def __init__(self, brand, power, temperature_range):
+        super().__init__(brand, power)
+        self.temperature_range = temperature_range
+    def getInfo(self):
+        super().getInfo()
+        print(f" temperature - {self.temperature_range}")
+class Microwave(KitchenAppliance):
+    def __init__(self, brand, power, capacity):
+        super().__init__(brand, power)
+        self.capacity = capacity
+    def getInfo(self):
+        super().getInfo()
+        print(f" capacity - {self.capacity}")
+
+oven1 = Oven("Samsung", "1800 W", "250 C")
+oven1.getInfo()
+microwave1 = Microwave("Tefal", "1200 W", "42 L")
+microwave1.getInfo()
