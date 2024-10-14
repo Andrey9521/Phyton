@@ -1,0 +1,21 @@
+class Fibonacci:
+    def __init__(self, n):
+        self.n = n
+        self.sequence = []
+
+    def generate_sequence(self):
+        a, b = 0, 1
+        for _ in range(self.n):
+            self.sequence.append(a)
+            a, b = b, a + b
+
+    def display_sequence(self):
+        for number in self.sequence:
+            print(number, end=' ')
+        print()
+
+
+n = int(input("Enter your name- "))
+fib = Fibonacci(n)
+fib.generate_sequence()
+fib.display_sequence()
